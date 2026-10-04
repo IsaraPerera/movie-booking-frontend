@@ -52,11 +52,27 @@ export const SeatSelection: React.FC = () => {
             alert('Booking created successfully! Proceeding to payment.');
             navigate('/my-bookings');
         } catch (error: any) {
-            if (error.response?.status === 401 || error.response?.status === 403) {
+            console.error('Create booking failed:', error);
+
+            if (error.response?.status === 401) {
                 alert('Please sign in to book seats.');
                 navigate('/sign-in');
             } else {
-                alert(error.response?.data?.errorDescription || 'Failed to create booking.');
+                // Shows the HTTP status and the server's message so the real
+                // cause is visible. "no response" means the request never got
+                // an answer (network / CORS), not a server-side error.
+                const status = error.response?.status;
+                const data = error.response?.data;
+                const detail =
+                    data?.errorDescription ||
+                    data?.message ||
+                    data?.error ||
+                    (typeof data === 'string' ? data : '');
+                alert(
+                    'Failed to create booking' +
+                    (status ? ` (HTTP ${status})` : ' (no response from server)') +
+                    (detail ? `: ${detail}` : '.')
+                );
             }
         } finally {
             setLoading(false);
