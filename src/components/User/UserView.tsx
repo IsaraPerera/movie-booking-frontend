@@ -38,12 +38,12 @@ export const UserView = () => {
     };
 
     return (
-        <div className="max-w-8xl mx-auto mt-8 bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+        <div className="max-w-8xl mx-auto mt-8 bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden text-gray-900">
             <div className="px-6 py-5 border-b border-gray-200">
-                <h2 className="text-2xl font-bold text-gray-800">
+                <h2 className="text-2xl font-bold text-gray-900">
                     User Enrollment Details
                 </h2>
-                <p className="text-sm text-gray-500 mt-1">
+                <p className="text-sm text-gray-700 mt-1">
                     Manage registered users
                 </p>
             </div>
@@ -52,22 +52,22 @@ export const UserView = () => {
                 <table className="w-full">
                     <thead className="bg-gray-100">
                         <tr>
-                            <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
+                            <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
                                 User ID
                             </th>
-                            <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
+                            <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
                                 First Name
                             </th>
-                            <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
+                            <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
                                 Last Name
                             </th>
-                            <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
+                            <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
                                 Email
                             </th>
-                            <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
+                            <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
                                 Role
                             </th>
-                            <th className="px-6 py-4 text-center text-sm font-semibold text-gray-700">
+                            <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">
                                 Actions
                             </th>
                         </tr>
@@ -76,12 +76,12 @@ export const UserView = () => {
                     <tbody className="divide-y divide-gray-200">
                         {users.map((user) => (
                             <tr key={user.userId} className="hover:bg-gray-50">
-                                <td className="px-6 py-4 text-gray-700">{user.userId}</td>
-                                <td className="px-6 py-4 font-medium">{user.firstName}</td>
-                                <td className="px-6 py-4 font-medium">{user.lastName}</td>
-                                <td className="px-6 py-4 text-gray-600">{user.email}</td>
+                                <td className="px-6 py-4 text-gray-900">{user.userId}</td>
+                                <td className="px-6 py-4 font-medium text-gray-900">{user.firstName}</td>
+                                <td className="px-6 py-4 font-medium text-gray-900">{user.lastName}</td>
+                                <td className="px-6 py-4 text-gray-900">{user.email}</td>
                                 <td className="px-6 py-4">
-                                    <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-medium">
+                                    <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-900 text-xs font-medium">
                                         {user.role}
                                     </span>
                                 </td>
